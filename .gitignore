@@ -1,33 +1,55 @@
-# Gradle files
-.gradle/
-build/
+# ====================================================
+# Angular Project .gitignore File
+# ====================================================
+# This file is designed to cover the standard files and folders
+# that should be ignored in an Angular project.
+#
+# For more details, see:
+# https://angular.io/guide/build and
+# https://help.github.com/articles/ignoring-files
+# ====================================================
 
-# Local configuration file (sdk path, etc)
-local.properties
+### Node Dependencies ###
+# Ignore node_modules, which can be restored with 'npm install' or 'yarn'
+/node_modules/
 
-# Log/OS Files
-*.log
+### Angular Build & Output Directories ###
+# 'dist' is the default output folder for production builds
+/dist
+# 'out-tsc' is where Angular compiles TypeScript files
+/out-tsc
+# 'tmp' may be used for temporary build files
+/tmp
 
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.apk
-output.json
+### Angular CLI Cache ###
+# Angular CLI (v12 and later) uses this cache directory to speed up builds
+/.angular/cache
 
-# IntelliJ
-*.iml
+### Test Coverage ###
+# The coverage folder (if you use a tool like Karma/Istanbul) should not be committed
+/coverage
+
+### Environment Files ###
+# Environment configuration files (especially those containing secrets)
+# should not be committed. Adjust these patterns as needed.
+.env
+.env.*.local
+
+### IDE & Editor Files ###
+# IDE directories and files (adjust or extend this list as needed)
 .idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
 
-# Keystore files
-*.jks
-*.keystore
+### OS Specific Files ###
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
-
-# Android Profiling
-*.hprof
+# ====================================================
+# End of .gitignore
+# ====================================================
