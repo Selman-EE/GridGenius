@@ -1,0 +1,32 @@
+<div class="sudoku-container">
+    <h1>Hello, Grid Genius Welcome to Sudoku Game</h1>
+
+    <div class="controls">
+        <label>Select Difficulty:</label>
+        <select [(ngModel)]="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="random">Random</option>
+        </select>
+        <button (click)="startGame()">Start Game</button>
+        <button (click)="validateGame()">Validate</button>
+        <button (click)="solveGame()">Solve</button>
+    </div>
+
+    <div *ngIf="isLoading" class="loading">Loading...</div>
+    <table class="sudoku-grid">
+        <tbody>
+            <tr *ngFor="let row of board; let i = index">
+                <td *ngFor="let cell of row; let j = index" class="sudoku-cell">
+                    <input type="text" [value]="board[i][j] === 0 ? '' : board[i][j]" [disabled]="isCellDisabled(i, j)"
+                        (input)="onInput($event, i, j)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="gameWon" class="win-message">
+        🎉 You won! 🎉
+    </div>
+</div>

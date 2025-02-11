@@ -1,0 +1,76 @@
+.sudoku-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.sudoku-grid {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.sudoku-cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0;
+  //cursor: unset;
+}
+
+.sudoku-cell input {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.sudoku-cell input:disabled {
+  background-color: #f0f0f0;
+  color: #000;
+  font-weight: bold;
+  //border: 1px solid black;
+}
+
+.sudoku-cell input:not(:disabled) {
+  background-color: white;
+  color: black;
+  font-weight: normal;
+  cursor: text;
+}
+
+/* Thicker Borders for 3x3 Sub-Grids */
+tr:nth-child(3n) td {
+  border-bottom: 3px solid black;
+  //border-top: 3px solid black;
+}
+
+// first tr:nth-child(3n) td {
+//     border-top: 3px solid black;
+//     //border-top: 3px solid black;
+// }
+
+td:nth-child(3n) {
+  border-right: 3px solid black;
+  //border-left: 3px solid black;
+}
+
+tr:nth-child(3n + 1) {
+  border-top: 3px solid black;
+}
+
+td:nth-child(3n + 1) {
+  border-left: 3px solid black;
+}
+
+div.controls > label,
+select,
+button {
+  margin-left: 2px;
+}
